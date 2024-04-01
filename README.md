@@ -11,9 +11,8 @@
 - install docker
 - run ``git clone https://github.com/makobongo/infama.git ``
 - change dir to infamainsurance i.e. cd infamainsurance
-- run ``docker compose build``
-- wait for it to build successfully
-- run ``docker compose up -d``
+- run ``docker compose up -d --build``
+- wait for it to build successfully and launch
 - then visit `` http://localhost:8080 or http://127.0.0.1:8080 ``.
 
 ## Demo
