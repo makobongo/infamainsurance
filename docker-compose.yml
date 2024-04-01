@@ -5,10 +5,10 @@ services:
          build: ./frontend
          ports:
            - 8080:8080
-#   backend:
-#         build: ./backend
-#         ports:
-#           - 3001:3001
+  backend:
+        build: ./backend
+        ports:
+          - 3001:3001
 #         environment:
 #           DB_URL: mongodb://database/infamainsurance
 #   database:
