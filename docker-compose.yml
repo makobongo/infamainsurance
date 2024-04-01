@@ -1,22 +1,32 @@
 version: "3.8"
 
 services:
+  # Frontend service
   frontend:
          build: ./frontend
          ports:
            - 8080:8080
+  # Backend service         
   backend:
         build: ./backend
         ports:
-          - 3000:3000
-#         environment:
-#           DB_URL: mongodb://database/infamainsurance
-#   database:
-#           image: mongo:4.0-xenial
-#           ports:
-#             - 27017:27017
-#           volumes:
-#             - infamainsurance:/data/db
+          - 4000:3000
+        environment:
+          PORT: 3000
+          MONGODB_URI: mongodb://db_container:27017
+          DB_NAME: infamainsurance
+          NAME: makobongo
+        depends_on:
+          - mongodb
+          
+#   # Mongodb services
+  mongodb:
+        container_name: db_container
+        image: mongo
+        restart: always
+        volumes:
+          - mongo_db:/data/db
 
-# volumes:
-# infamainsurance:
+# # volume
+volumes:
+  mongo_db: {}
