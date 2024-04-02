@@ -1,11 +1,9 @@
-version: "3.8"
-
 services:
   # Frontend service
   frontend:
          build: ./frontend
          ports:
-           - 8080:8080
+           - 8000:8080
          volumes:
            - .:/frontend/app
   # Backend service         

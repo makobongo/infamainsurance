@@ -13,7 +13,7 @@
 - change dir to infamainsurance i.e. cd infamainsurance
 - run ``docker compose up -d --build``
 - wait for it to build successfully and launch
-- then visit `` http://localhost:8080 or http://127.0.0.1:8080 ``.
+- then visit `` http://localhost:8000 or http://127.0.0.1:8000 ``.
 
 ## Demo
 **Live Demo:** https://infamainsurance.com
