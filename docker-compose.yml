@@ -1,35 +1,37 @@
 services:
   # Frontend service
   frontend:
-         build: ./frontend
-         ports:
-           - 8000:8080
-         volumes:
-           - .:/frontend/app
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - 8000:8080
+    volumes:
+      - .:/frontend/app
   # Backend service         
   backend:
-        build: ./backend
-        ports:
-          - 4000:3000
-        volumes:
-          - .:/backend/usr/src/app
-        environment:
-          PORT: 3000
-          MONGODB_URI: mongodb://db_container:27017
-          DB_NAME: infamainsurance
-          NAME: makobongo
-        depends_on:
-          - mongodb
+    container_name: backend
+    build: ./backend
+    ports:
+      - 4000:3000
+    volumes:
+      - .:/backend/usr/src/app
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://db_container:27017
+      DB_NAME: infamainsurance
+      NAME: makobongo
+    depends_on:
+      - mongodb
           
 #   # Mongodb services
   mongodb:
-        container_name: db_container
-        image: mongo
-        restart: always
-        ports:
-          - 2717:27017
-        volumes:
-          - mongo_db:/data/db
+    container_name: database
+    image: mongo
+    restart: always
+    ports:
+      - 2717:27017
+    volumes:
+      - mongo_db:/data/db
 
 # # volume
 volumes:
