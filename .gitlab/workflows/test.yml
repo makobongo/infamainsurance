@@ -1,0 +1,15 @@
+name: infamainsurance
+
+on:
+  push:
+    branches:
+    - 'master'
+
+  pull_request:
+    - 'master'
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing
+        runs: echo "testing"
